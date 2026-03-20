@@ -24,7 +24,7 @@
             line-height: 1.6;
         }
 
-        /* Enforcing Playfair Display for headings and all links */
+        /* Enforcing Playfair Display for headings and navigation links */
         h1, h2, h3, a, th {
             font-family: "Playfair Display", serif;
         }
@@ -54,7 +54,6 @@
             z-index: 1000;
         }
         
-        /* FIX: Explicitly set logo font to Playfair Display */
         .logo {
             font-family: "Playfair Display", serif;
             font-size: 1.5em;
@@ -88,7 +87,7 @@
             cursor: pointer;
         }
 
-        /* Highlights 'Projects' as the active parent category (3rd item) */
+        /* Highlights 'Projects' as active parent */
         nav > ul > li:nth-child(3) > a {
             color: white !important; 
         }
@@ -122,6 +121,11 @@
             font-weight: 400;
         }
 
+        /* FIX: Highlights 'Videography' in white for this specific page */
+        .dropdown-content li:nth-child(1) a {
+            color: white !important;
+        }
+
         .dropdown-content a:hover {
             background-color: #E0E2DF;
             color: #816B6E !important;
@@ -131,7 +135,7 @@
             display: block;
         }
 
-        /* --- Back Button Style --- */
+        /* --- Navigation Buttons --- */
         .back-button {
             display: inline-block;
             padding: 12px 30px;
@@ -234,7 +238,6 @@
             font-size: 1.05em;
         }
 
-        /* View Project Button Style */
         .view-project-btn {
             align-self: flex-start;
             padding: 12px 35px;
