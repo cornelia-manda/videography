@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornelia Manda | Projects | Videography</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Reset & Typography */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #E0E2DF;
+            line-height: 1.6;
+        }
+
+        /* Enforcing Playfair Display for headings and navigation links */
+        h1, h2, h3, a, th {
+            font-family: "Playfair Display", serif;
+        }
+
+        /* --- Link Reset: Prevents blue/purple default colors --- */
+        a, a:visited, a:active {
+            text-decoration: none;
+            color: inherit; 
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #E0E2DF;
+            min-height: 100vh;
+        }
+
+        /* Navigation Area matching brand aesthetic */
+        header {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            align-items: center;
+            background-color: #DDBDBE;
+            padding: 17px 60px;
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            color: #655C5B;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-left: 40px;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        nav a {
+            color: #655C5B !important; 
+            font-size: 1.1em;
+            display: inline-block;
+            padding: 10px 0;
+        }
+
+        nav a:hover {
+            color: white !important;
+            cursor: pointer;
+        }
+
+        /* Highlights 'Projects' as active parent */
+        nav > ul > li:nth-child(3) > a {
+            color: white !important; 
+        }
+
+        /* --- Dropdown Menu Styles --- */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #DDBDBE; 
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            z-index: 100;
+            text-align: left;
+            padding: 10px 0;
+            top: 100%; 
+            left: 0;
+            margin-top: -5px;
+        }
+
+        .dropdown-content li {
+            display: block;
+            margin: 0;
+        }
+
+        .dropdown-content a, .dropdown-content a:visited {
+            color: #655C5B !important; 
+            padding: 12px 20px;
+            display: block;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #E0E2DF;
+            color: #816B6E !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* --- Navigation Buttons --- */
+        .back-button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1em;
+            background-color: #C99B9B;
+            color: white !important;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            margin-left: 80px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #816B6E;
+            transform: rotate(-2deg);
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            color: #816B6E;
+            font-size: 4.5em;
+            margin: 0px 0 60px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* --- Detailed Project Grid --- */
+        .video-deep-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            padding: 0 80px 100px 80px;
+        }
+
+        .video-card {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            background: white;
+            box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-preview {
+            position: relative;
+            background-color: #000;
+            height: 400px;
+        }
+
+        .video-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .video-info {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .video-tag {
+            color: #C99B9B;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .video-info h2 {
+            font-size: 2.8em;
+            color: #816B6E;
+            margin: 0 0 15px 0;
+            line-height: 1.1;
+        }
+
+        .video-meta {
+            font-style: italic;
+            color: #655C5B;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .video-desc {
+            font-family: "Roboto", sans-serif;
+            color: #5D4F51;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+        }
+
+        /* View Project Button Style */
+        .view-project-btn {
+            align-self: flex-start;
+            padding: 12px 35px;
+            border: 2px solid #816B6E;
+            color: #816B6E !important;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .view-project-btn:hover {
+            background-color: #816B6E;
+            color: white !important;
+            transform: rotate(-1deg);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #655C5B;
+            font-size: 0.9em;
+            border-top: 1px solid #DDBDBE; 
+        }
+
+        .footer-table-wrapper {
+            display: flex; 
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-table { border-collapse: collapse; text-align: left; }
+        .footer-table th { color: #816B6E; padding: 5px 10px; font-size: 1.1em; }
+        .footer-table td { padding: 5px 0; font-family: "Roboto", sans-serif; white-space: nowrap; }
+        .footer-table th:not(:first-child) { padding-left: 30px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo">Cornelia Manda</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li class="dropdown">
+                        <a href="projects.html">Projects</a>
+                        <ul class="dropdown-content">
+                            <li><a href="videography.html">Videography</a></li>
+                            <li><a href="branding.html">Branding</a></li>
+                            <li><a href="webapp.html">Web and App</a></li>
+                            <li><a href="graphicdesign.html">Graphic Design</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <a href="projects.html" class="back-button">← Back to Projects</a>
+
+        <h1 class="page-title">VIDEOGRAPHY</h1>
+
+        <main class="video-deep-grid">
+            
+            <section class="video-card">
+                <div class="video-preview">
+                    <img src="Ger102-film.png" alt="Äpfel im Mai film still">
+                </div>
+                <div class="video-info">
+                    <span class="video-tag">Short Film | 2025</span>
+                    <h2>Äpfel im Mai</h2>
+                    <p class="video-meta">Role: Screenwriter, Director, Editor</p>
+                    <p class="video-desc">A short film created for GER102 utilizing strictly class vocabulary. Awarded the Golden Boar Award at the University of Waterloo.</p>
+                    <a href="apples-in-may-detail.html" class="view-project-btn">View Detailed Project</a>
+                </div>
+            </section>
+
+            <section class="video-card">
+                <div class="video-preview">
+                    <img src="Ger101-film.jpeg" alt="Befolgte Schritte film still">
+                </div>
+                <div class="video-info">
+                    <span class="video-tag">Short Film | 2024</span>
+                    <h2>Befolgte Schritte</h2>
+                    <p class="video-meta">Role: Director, Editor, Lead Actress</p>
+                    <p class="video-desc">Transformative university project using GER101 vocabulary constraints. Collaborative scriptwriting with classmates.</p>
+                    <a href="befolgte-schritte-detail.html" class="view-project-btn">View Detailed Project</a>
+                </div>
+            </section>
+
+            <section class="video-card">
+                <div class="video-preview">
+                    <img src="shortfilm.jpeg" alt="What Could Go Wrong? film still">
+                </div>
+                <div class="video-info">
+                    <span class="video-tag">Film Festival | 2023 / 2024</span>
+                    <h2>What Could Go Wrong?</h2>
+                    <p class="video-meta">Role: Camera Operator, Editor, Screenwriter</p>
+                    <p class="video-desc">Exploring anxiety and self-doubt through visual tension. Won First Place at the Eagles News Festival.</p>
+                    <a href="what-could-go-wrong-detail.html" class="view-project-btn">View Detailed Project</a>
+                </div>
+            </section>
+
+            <section class="video-card">
+                <div class="video-preview">
+                    <img src="2nd-place.png" alt="Sneakers horror-comedy still">
+                </div>
+                <div class="video-info">
+                    <span class="video-tag">Horror-Comedy | 2022 / 2023</span>
+                    <h2>Sneakers</h2>
+                    <p class="video-meta">Role: Camera Operator, Editor, Screenwriter</p>
+                    <p class="video-desc">Fast-paced, jarring editing to escalate tension in this high school realism blend. Outstanding Achievement winner.</p>
+                    <a href="sneakers-detail.html" class="view-project-btn">View Detailed Project</a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-table-wrapper">
+                <table class="footer-table">
+                    <tr>
+                        <th>Email:</th>
+                        <td><a href="mailto:cmanda@uwaterloo.ca">cmanda@uwaterloo.ca</a></td>
+                        <th>School:</th>
+                        <td><a href="https://uwaterloo.ca" target="_blank">University of Waterloo</a></td>
+                        <th>Location:</th>
+                        <td>Kitchener-Waterloo, Ontario</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="copyright">&copy; 2026 Cornelia Manda. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
