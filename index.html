@@ -24,7 +24,7 @@
             line-height: 1.6;
         }
 
-        /* Enforcing Playfair Display for headings and navigation links */
+        /* Enforcing Playfair Display for headings and all links */
         h1, h2, h3, a, th {
             font-family: "Playfair Display", serif;
         }
@@ -43,7 +43,7 @@
             min-height: 100vh;
         }
 
-        /* Navigation Area matching brand aesthetic */
+        /* Navigation Area */
         header {
             display: grid;
             grid-template-columns: 30% 70%;
@@ -54,7 +54,9 @@
             z-index: 1000;
         }
         
+        /* FIX: Explicitly set logo font to Playfair Display */
         .logo {
+            font-family: "Playfair Display", serif;
             font-size: 1.5em;
             letter-spacing: 1px;
             color: #655C5B;
@@ -70,7 +72,7 @@
         nav li {
             display: inline-block;
             margin-left: 40px;
-            position: relative;
+            position: relative; 
             vertical-align: middle;
         }
 
@@ -86,7 +88,7 @@
             cursor: pointer;
         }
 
-        /* Highlights 'Projects' as active parent (3rd item) */
+        /* Highlights 'Projects' as the active parent category (3rd item) */
         nav > ul > li:nth-child(3) > a {
             color: white !important; 
         }
@@ -129,7 +131,7 @@
             display: block;
         }
 
-        /* --- Navigation Buttons --- */
+        /* --- Back Button Style --- */
         .back-button {
             display: inline-block;
             padding: 12px 30px;
@@ -250,7 +252,7 @@
             transform: rotate(-1deg);
         }
 
-        /* Footer matching established site standards */
+        /* Footer */
         footer {
             text-align: center;
             padding: 40px;
