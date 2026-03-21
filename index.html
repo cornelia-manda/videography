@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cornelia Manda | Projects | Videography</title>
+    <title>Cornelia Manda | Portfolio | Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
@@ -21,10 +21,8 @@
             font-size: 16px;
             color: #333;
             background-color: #E0E2DF;
-            line-height: 1.6;
         }
 
-        /* Enforcing Playfair Display for headings and navigation links */
         h1, h2, h3, a, th {
             font-family: "Playfair Display", serif;
         }
@@ -43,7 +41,7 @@
             min-height: 100vh;
         }
 
-        /* Navigation Area matching brand aesthetic */
+        /* Navigation Area */
         header {
             display: grid;
             grid-template-columns: 30% 70%;
@@ -77,6 +75,7 @@
 
         nav a {
             color: #655C5B !important; 
+            font-family: "Playfair Display", serif;
             font-size: 1.1em;
             display: inline-block;
             padding: 10px 0;
@@ -87,7 +86,6 @@
             cursor: pointer;
         }
 
-        /* Highlights 'Projects' as active parent */
         nav > ul > li:nth-child(3) > a {
             color: white !important; 
         }
@@ -121,11 +119,6 @@
             font-weight: 400;
         }
 
-        /* Highlights 'Videography' in white for this specific page */
-        .dropdown-content li:nth-child(1) a {
-            color: white !important;
-        }
-
         .dropdown-content a:hover {
             background-color: #E0E2DF;
             color: #816B6E !important;
@@ -135,7 +128,7 @@
             display: block;
         }
 
-        /* --- Navigation Buttons --- */
+        /* --- Back Button Style --- */
         .back-button {
             display: inline-block;
             padding: 12px 30px;
@@ -156,109 +149,198 @@
             transform: rotate(-2deg);
         }
 
-        /* Page Title */
+        /* --- Page Title --- */
         .page-title {
             text-align: center;
             color: #816B6E;
             font-size: 4.5em;
-            margin: 0px 0 60px 0;
+            margin: 0px 0 30px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
         }
 
-        /* --- Detailed Project Grid --- */
-        .video-deep-grid {
+        /* Category Grid Navigation */
+        .category-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 60px;
-            padding: 0 80px 100px 80px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 0 80px 60px 80px;
         }
 
-        .video-card {
-            display: grid;
-            grid-template-columns: 45% 55%;
-            background: white;
-            box-shadow: 15px 15px 0px rgba(101, 92, 91, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-preview {
+        .category-item {
             position: relative;
-            background-color: #000;
             height: 400px;
+            overflow: hidden;
+            background-color: #fff;
+            display: block;
         }
 
-        .video-preview img {
+        .category-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.85;
+            display: block;
+            transition: transform 0.5s ease;
         }
 
-        .video-info {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .category-label {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(101, 92, 91, 0.85); 
+            padding: 40px 0; 
+            z-index: 10;
         }
 
-        .video-tag {
-            color: #C99B9B;
-            font-weight: 900;
+        .category-label h2 {
+            color: white;
+            font-size: 2em;
+            margin: 0;
+            font-weight: 600; 
+            letter-spacing: 1px;
             text-transform: uppercase;
-            font-size: 0.85em;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
         }
 
-        .video-info h2 {
-            font-size: 2.8em;
-            color: #816B6E;
-            margin: 0 0 15px 0;
-            line-height: 1.1;
-        }
-
-        .video-meta {
-            font-style: italic;
-            color: #655C5B;
-            margin-bottom: 20px;
-            font-size: 1em;
-        }
-
-        .video-desc {
+        .uni-label {
+            color: #C99B9B;
+            font-size: 0.9em; 
             font-family: "Roboto", sans-serif;
-            color: #5D4F51;
-            margin-bottom: 30px;
-            font-size: 1.05em;
+            font-weight: 900; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            position: absolute;
+            left: 10px; 
+            top: 35%; 
+            line-height: 1; 
+            margin: 0;
+            z-index: 15;
+            transform-origin: bottom left;
+            transform: rotate(90deg) translateX(-50%); 
         }
 
-        .view-project-btn {
-            align-self: flex-start;
-            padding: 12px 35px;
-            border: 2px solid #816B6E;
-            color: #816B6E !important;
-            font-weight: bold;
+        .category-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            background-color: rgba(221, 189, 190, 0.2);
+            padding: 60px 0;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .carousel-title {
+            text-align: center;
+            color: #816B6E;
+            font-size: 2.5em;
+            margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
         }
 
-        .view-project-btn:hover {
-            background-color: #816B6E;
-            color: white !important;
-            transform: rotate(-1deg);
+        .carousel-wrapper {
+            position: relative;
+            padding: 0 80px;
         }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            flex: 0 0 350px;
+            background: white;
+            scroll-snap-align: start;
+            box-shadow: 10px 10px 0px rgba(101, 92, 91, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            color: #816B6E;
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            color: #5D4F51;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .project-date {
+            margin-top: auto;
+            color: #C99B9B;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #816B6E;
+            color: white;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .carousel-arrow:hover {
+            background-color: #C99B9B;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-left { left: 15px; }
+        .arrow-right { right: 15px; }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px;
+            margin-top: 40px;
             color: #655C5B;
             font-size: 0.9em;
             border-top: 1px solid #DDBDBE; 
@@ -270,11 +352,39 @@
             margin-bottom: 20px;
         }
 
-        .footer-table { border-collapse: collapse; text-align: left; }
-        .footer-table th { color: #816B6E; padding: 5px 10px; font-size: 1.1em; }
-        .footer-table td { padding: 5px 0; font-family: "Roboto", sans-serif; white-space: nowrap; }
-        .footer-table th:not(:first-child) { padding-left: 30px; }
+        .footer-table {
+            border-collapse: collapse;
+            text-align: left;
+        }
 
+        .footer-table th {
+            color: #816B6E;
+            font-size: 1.1em;
+            padding: 5px 10px 5px 0;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .footer-table th:not(:first-child) {
+            padding-left: 30px; 
+        }
+
+        .footer-table td {
+            padding: 5px 0;
+            font-family: "Roboto", sans-serif;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .footer-table a:hover {
+            color: #816B6E !important;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 0.8em;
+        }
     </style>
 </head>
 <body>
@@ -288,7 +398,7 @@
                     <li><a href="https://cornelia-manda.github.io/home/">Home</a></li>
                     <li><a href="https://cornelia-manda.github.io/portfolio/">Portfolio</a></li>
                     <li class="dropdown">
-                        <a href="https://cornelia-manda.github.io/projects/">Projects</a>
+                        <a href="#">Projects</a>
                         <ul class="dropdown-content">
                             <li><a href="https://cornelia-manda.github.io/videography/">Videography</a></li>
                             <li><a href="#">Branding</a></li>
@@ -301,65 +411,76 @@
             </nav>
         </header>
 
-        <a href="https://cornelia-manda.github.io/projects/" class="back-button">← Back to Projects</a>
+        <a href="https://cornelia-manda.github.io/portfolio/" class="back-button">← Back to Portfolio</a>
 
-        <h1 class="page-title">VIDEOGRAPHY</h1>
+        <h1 class="page-title">PROJECTS</h1>
 
-        <main class="video-deep-grid">
-            
-            <section class="video-card">
-                <div class="video-preview">
-                    <img src="Ger102-Still-V.png" alt="Äpfel im Mai film still">
-                </div>
-                <div class="video-info">
-                    <span class="video-tag">Short Film | 2025</span>
-                    <h2>Äpfel im Mai</h2>
-                    <p class="video-meta">Role: Screenwriter, Director, Editor, Lead Actress</p>
-                    <p class="video-desc">A short film created for GER102 utilizing strictly class vocabulary. Awarded the Golden Boar Award at the University of Waterloo.</p>
-                    <a href="https://cornelia-manda.github.io/apfel-in-mai/" class="view-project-btn">View Detailed Project</a>
-                </div>
-            </section>
-
-            <section class="video-card">
-                <div class="video-preview">
-                    <img src="Ger101-film.jpeg" alt="Befolgte Schritte film still">
-                </div>
-                <div class="video-info">
-                    <span class="video-tag">Short Film | 2024</span>
-                    <h2>Befolgte Schritte</h2>
-                    <p class="video-meta">Role: Director, Editor, Lead Actress</p>
-                    <p class="video-desc">Transformative university project using GER101 vocabulary constraints. Collaborative scriptwriting with classmates.</p>
-                    <a href="befolgte-schritte-detail.html" class="view-project-btn">View Detailed Project</a>
-                </div>
-            </section>
-
-            <section class="video-card">
-                <div class="video-preview">
-                    <img src="shortfilm.jpeg" alt="What Could Go Wrong? film still">
-                </div>
-                <div class="video-info">
-                    <span class="video-tag">Film Festival | 2023 / 2024</span>
-                    <h2>What Could Go Wrong?</h2>
-                    <p class="video-meta">Role: Camera Operator, Editor, Screenwriter</p>
-                    <p class="video-desc">Exploring anxiety and self-doubt through visual tension. Won First Place at the Eagles News Festival.</p>
-                    <a href="what-could-go-wrong-detail.html" class="view-project-btn">View Detailed Project</a>
-                </div>
-            </section>
-
-            <section class="video-card">
-                <div class="video-preview">
-                    <img src="2nd-place.png" alt="Sneakers horror-comedy still">
-                </div>
-                <div class="video-info">
-                    <span class="video-tag">Horror-Comedy | 2022 / 2023</span>
-                    <h2>Sneakers</h2>
-                    <p class="video-meta">Role: Camera Operator, Editor, Screenwriter</p>
-                    <p class="video-desc">Fast-paced, jarring editing to escalate tension in this high school realism blend. Outstanding Achievement winner.</p>
-                    <a href="sneakers-detail.html" class="view-project-btn">View Detailed Project</a>
-                </div>
-            </section>
-
+        <main class="category-grid">
+            <a href="https://cornelia-manda.github.io/videography/" class="category-item">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="videography-thumb.jpg" alt="Videography Category">
+                <div class="category-label"><h2>Videography</h2></div>
+            </a>
+            <a href="#" class="category-item">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="branding-thumb.jpg" alt="Branding Category">
+                <div class="category-label"><h2>Branding</h2></div>
+            </a>
+            <a href="#" class="category-item">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="webapp-thumb.jpg" alt="Web and App Category">
+                <div class="category-label"><h2>Web & App</h2></div>
+            </a>
+            <a href="#" class="category-item">
+                <div class="uni-label">@ University of Waterloo</div>
+                <img src="graphic-thumb.jpg" alt="Graphic Design Category">
+                <div class="category-label"><h2>Graphic Design</h2></div>
+            </a>
         </main>
+
+        <section class="carousel-section">
+            <h2 class="carousel-title">ALL PROJECTS</h2>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow arrow-left" onclick="scrollCarousel(-1)">&#10094;</button>
+                <button class="carousel-arrow arrow-right" onclick="scrollCarousel(1)">&#10095;</button>
+
+                <div class="carousel-container" id="projectCarousel">
+                    <a href="#" class="project-card">
+                        <img src="Ger102-film.png" alt="Äpfel im Mai">
+                        <div class="project-card-content">
+                            <h3>Äpfel im Mai</h3>
+                            <p>Award-winning short film created for GER102, focusing on vocabulary integration and visual storytelling.</p>
+                            <span class="project-date">2025</span>
+                        </div>
+                    </a>
+                    <a href="#" class="project-card">
+                        <img src="Ger101-film.jpeg" alt="Befolgte Schritte">
+                        <div class="project-card-content">
+                            <h3>Befolgte Schritte</h3>
+                            <p>Director and editor for this university short film project utilizing class-taught German vocabulary.</p>
+                            <span class="project-date">2024</span>
+                        </div>
+                    </a>
+                    <a href="#" class="project-card">
+                        <img src="shortfilm.jpeg" alt="What Could Go Wrong?">
+                        <div class="project-card-content">
+                            <h3>What Could Go Wrong?</h3>
+                            <p>A poignant film exploring personal anxiety and self-doubt. Won First Place at Eagles News Festival.</p>
+                            <span class="project-date">2023 / 2024</span>
+                        </div>
+                    </a>
+                    <a href="#" class="project-card">
+                        <img src="2nd-place.png" alt="Sneakers">
+                        <div class="project-card-content">
+                            <h3>Sneakers</h3>
+                            <p>A four-minute horror-comedy about a Grade 11 student. Winner of Outstanding Achievement in Film.</p>
+                            <span class="project-date">2022 / 2023</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <footer>
             <div class="footer-table-wrapper">
@@ -378,6 +499,17 @@
         </footer>
 
     </div>
+
+    <script>
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('projectCarousel');
+            const scrollAmount = 380; 
+            carousel.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 </body>
 </html>
