@@ -24,12 +24,11 @@
             line-height: 1.6;
         }
 
-        /* Enforcing Playfair Display for headings and navigation links */
         h1, h2, h3, a, th {
             font-family: "Playfair Display", serif;
         }
 
-        /* --- Link Reset: Prevents blue/purple default colors --- */
+        /* --- Link Reset --- */
         a, a:visited, a:active {
             text-decoration: none;
             color: inherit; 
@@ -92,7 +91,6 @@
             color: white !important; 
         }
 
-        /* --- Dropdown Menu Styles --- */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -107,10 +105,7 @@
             margin-top: -5px;
         }
 
-        .dropdown-content li {
-            display: block;
-            margin: 0;
-        }
+        .dropdown-content li { display: block; margin: 0; }
 
         .dropdown-content a, .dropdown-content a:visited {
             color: #655C5B !important; 
@@ -131,11 +126,8 @@
             color: #816B6E !important;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+        .dropdown:hover .dropdown-content { display: block; }
 
-        /* --- Navigation Buttons --- */
         .back-button {
             display: inline-block;
             padding: 12px 30px;
@@ -156,7 +148,6 @@
             transform: rotate(-2deg);
         }
 
-        /* Page Title */
         .page-title {
             text-align: center;
             color: #816B6E;
@@ -167,7 +158,6 @@
             font-weight: 700;
         }
 
-        /* --- Detailed Project Grid --- */
         .video-deep-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -184,9 +174,7 @@
             transition: transform 0.3s ease;
         }
 
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
+        .video-card:hover { transform: translateY(-5px); }
 
         .video-preview {
             position: relative;
@@ -255,7 +243,6 @@
             transform: rotate(-1deg);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px;
@@ -280,7 +267,6 @@
 <body>
 
     <div class="container">
-        
         <header>
             <div class="logo">Cornelia Manda</div>
             <nav>
@@ -314,7 +300,7 @@
                 <div class="video-info">
                     <span class="video-tag">Short Film | 2025</span>
                     <h2>Äpfel im Mai</h2>
-                    <p class="video-meta">Role: Lead Actress, Screenwriter, Director, Editor</p>
+                    <p class="video-meta">Role: Screenwriter, Director, Editor, Lead Actress</p>
                     <p class="video-desc">A short film created for GER102 utilizing strictly class vocabulary. Awarded the Golden Boar Award at the University of Waterloo.</p>
                     <a href="https://cornelia-manda.github.io/apfel-in-mai/" class="view-project-btn">View Detailed Project</a>
                 </div>
@@ -322,14 +308,14 @@
 
             <section class="video-card">
                 <div class="video-preview">
-                    <img src="Ger101-film.jpeg" alt="Befolgte Schritte film still">
+                    <img src="Ger101-Still-V.png" alt="Befolgte Schritte film still">
                 </div>
                 <div class="video-info">
                     <span class="video-tag">Short Film | 2024</span>
                     <h2>Befolgte Schritte</h2>
                     <p class="video-meta">Role: Director, Editor, Lead Actress</p>
                     <p class="video-desc">Transformative university project using GER101 vocabulary constraints. Collaborative scriptwriting with classmates.</p>
-                    <a href="befolgte-schritte-detail.html" class="view-project-btn">View Detailed Project</a>
+                    <a href="https://cornelia-manda.github.io/befolgte-schritte/" class="view-project-btn">View Detailed Project</a>
                 </div>
             </section>
 
@@ -376,8 +362,6 @@
             </div>
             <p class="copyright">&copy; 2026 Cornelia Manda. All Rights Reserved.</p>
         </footer>
-
     </div>
-
 </body>
 </html>
